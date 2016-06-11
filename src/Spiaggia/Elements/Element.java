@@ -1,4 +1,4 @@
-package Elements;
+package Spiaggia.Elements;
 
 import Spiaggia.Prenotazione;
 

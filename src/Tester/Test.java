@@ -1,6 +1,6 @@
 package Tester;
 
-import Elements.*;
+import Spiaggia.Elements.*;
 import Spiaggia.*;
 
 import java.util.Date;

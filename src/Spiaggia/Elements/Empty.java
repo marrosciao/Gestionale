@@ -1,4 +1,4 @@
-package Elements;
+package Spiaggia.Elements;
 
 /**
  * Spazio vuoto nella spiaggia, non riservabile.

@@ -1,10 +1,9 @@
 package Spiaggia;
 
-import Elements.*;
+import Spiaggia.Elements.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  *Spiaggia su cui vengono disposti gli ombrelloni

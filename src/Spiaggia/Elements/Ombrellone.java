@@ -1,10 +1,10 @@
-package Elements;
+package Spiaggia.Elements;
 
 
 import Spiaggia.Prenotazione;
 
 /**
- * Elements.Ombrellone, contiene una prenotazione. Una prenotazione sola per giornata.
+ * Spiaggia.Elements.Ombrellone, contiene una prenotazione. Una prenotazione sola per giornata.
  */
 public class Ombrellone implements Element {
     private Kind kind = Kind.Ombrellone;
