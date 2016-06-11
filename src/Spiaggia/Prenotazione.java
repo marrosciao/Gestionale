@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
  * Spiaggia.Prenotazione viene applicato a Elements.Ombrellone
  */
 public class Prenotazione {
-
     private SimpleDateFormat inizio;
     private SimpleDateFormat termine;
     private int sdraio;

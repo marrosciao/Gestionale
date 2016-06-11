@@ -1,21 +1,31 @@
 package Spiaggia;
 
-import Elements.Ombrellone;
+import Elements.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 /**
  *Spiaggia su cui vengono disposti gli ombrelloni
  */
-public class Spiaggia { //La spiaggia dovrebbe contenere anche spazi vuoti, probabilmente un set di ombrelloni è poco inclusivo
-    private Set<Ombrellone> spiaggia;
+public class Spiaggia { //Assente il controllo di possibili code multipli. Da implementare.
+    private List<Element> spiaggia = new ArrayList<>();
 
     public Spiaggia() {}
 
-    public void adder(String c) { spiaggia.add(new Ombrellone(c)); } //Inserisce un nuovo ombrellone alla spiaggia
-    public void remover(String c) { //Rimuove un ombrellone dalla spiaggia
-        if(c == null) { throw new NullPointerException("Inserire il codice di un ombrellone"); }
-        for(Ombrellone o : spiaggia) { if(o.getCode().equals(c)) { spiaggia.remove(o); } }
+    public void adder(String k, String c) { //Inserisce un nuovo elemento alla spiaggia
+        if(k.equals("Ombrellone") || k.equals("ombrellone")) { spiaggia.add(new Ombrellone(c)); }
+        if(k.equals("Empty") || k.equals("empty")) { spiaggia.add(new Empty(c)); }
     }
+
+    public void remover(String k, String c) { //Rimuove un elemento dalla spiaggia
+        for(Element e : spiaggia) {
+            if(e.getKind().toString().equals(k) && e.getCode().equals(c)) { spiaggia.remove(e); }
+            else throw new IllegalArgumentException("Elemento non presente nella spiaggia");
+        }
+    }
+
+    public List<Element> getSpiaggia() { return spiaggia; }
 
 }

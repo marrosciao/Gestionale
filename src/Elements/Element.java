@@ -6,7 +6,6 @@ import Spiaggia.Prenotazione;
  * Oggetti della spiaggia
  */
 public interface Element {
-
     enum Kind {Ombrellone, Empty}
 
     Kind getKind();
