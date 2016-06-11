@@ -2,6 +2,7 @@ package Spiaggia;
 
 import Spiaggia.Elements.*;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,5 +27,21 @@ public class Spiaggia { //Assente il controllo di possibili code multipli. Da im
     }
 
     public List<Element> getSpiaggia() { return spiaggia; }
+/*//Non funziona
+    public void save() {
+        try {
+            FileOutputStream saveFile = new FileOutputStream("spiaggiaSave.sav");
+            ObjectOutputStream save = new ObjectOutputStream(saveFile);
+            save.writeObject(spiaggia); save.close();
+        } catch(Exception exc){ exc.printStackTrace(); }
+    }
 
+    public void load() {
+        try {
+            FileInputStream loadFile = new FileInputStream("spiaggiaSave.sav");
+            ObjectInputStream load = new ObjectInputStream(loadFile);
+            spiaggia = (ArrayList) load.readObject(); load.close();
+        } catch(Exception exc){ exc.printStackTrace(); }
+    }
+*/
 }

@@ -31,6 +31,14 @@ public class Test {
         System.out.println("Test Ombrellone: \n" +
                 "\tKind: "+beach.getSpiaggia().get(0).getKind().toString()+"\n" +
                 "\tCode: "+beach.getSpiaggia().get(0).getCode());
+/*//Non funziona
+        beach.save();
+
+        beach.adder("Ombrellone", "3");
+        System.out.println(beach.getSpiaggia().size());
+        beach.load();
+        System.out.println(beach.getSpiaggia().size());
+*/
     }
 
 }
