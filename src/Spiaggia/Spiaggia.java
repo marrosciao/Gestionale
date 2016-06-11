@@ -1,5 +1,7 @@
 package Spiaggia;
 
+import Elements.Ombrellone;
+
 import java.util.Set;
 
 /**

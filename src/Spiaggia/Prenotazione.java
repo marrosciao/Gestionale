@@ -3,7 +3,7 @@ package Spiaggia;
 import java.text.SimpleDateFormat;
 
 /**
- * Spiaggia.Prenotazione viene applicato a Spiaggia.Ombrellone
+ * Spiaggia.Prenotazione viene applicato a Elements.Ombrellone
  */
 public class Prenotazione {
 
