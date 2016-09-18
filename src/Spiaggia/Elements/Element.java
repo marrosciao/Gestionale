@@ -3,7 +3,7 @@ package Spiaggia.Elements;
 import Spiaggia.Prenotazione;
 
 /**
- * Oggetti della spiaggia
+ * Oggetti della spiaggia, il code da senso a l'elemento posizionando in uno spazio preciso.
  */
 public interface Element {
     enum Kind {Ombrellone, Empty}

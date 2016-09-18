@@ -2,46 +2,32 @@ package Spiaggia;
 
 import Spiaggia.Elements.*;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *Spiaggia su cui vengono disposti gli ombrelloni
  */
-public class Spiaggia { //Assente il controllo di possibili code multipli. Da implementare.
-    private List<Element> spiaggia = new ArrayList<>();
+public class Spiaggia {
+    private Map<String, Element> spiaggia = new HashMap<>();
 
     public Spiaggia() {}
 
     public void adder(String k, String c) { //Inserisce un nuovo elemento alla spiaggia
-        if(k.equals("Ombrellone") || k.equals("ombrellone")) { spiaggia.add(new Ombrellone(c)); }
-        if(k.equals("Empty") || k.equals("empty")) { spiaggia.add(new Empty(c)); }
-    }
-
-    public void remover(String k, String c) { //Rimuove un elemento dalla spiaggia
-        for(Element e : spiaggia) {
-            if(e.getKind().toString().equals(k) && e.getCode().equals(c)) { spiaggia.remove(e); }
-            else throw new IllegalArgumentException("Elemento non presente nella spiaggia");
+        if(!spiaggia.containsKey(c)) {
+            if(k.equals("Ombrellone")) { spiaggia.put(c, new Ombrellone(c)); }
+            if(k.equals("Empty")) { spiaggia.put(c, new Empty(c)); }
         }
+        else throw new IllegalArgumentException("Spazio già occupato sulla spiaggia");
     }
 
-    public List<Element> getSpiaggia() { return spiaggia; }
-/*//Non funziona
-    public void save() {
-        try {
-            FileOutputStream saveFile = new FileOutputStream("spiaggiaSave.sav");
-            ObjectOutputStream save = new ObjectOutputStream(saveFile);
-            save.writeObject(spiaggia); save.close();
-        } catch(Exception exc){ exc.printStackTrace(); }
+    public Boolean setter(String c, Element e) { //Imposta uno spazio della spiaggia
+        if(spiaggia.containsKey(c)) { spiaggia.replace(c, e); return true; }
+        return false;
     }
 
-    public void load() {
-        try {
-            FileInputStream loadFile = new FileInputStream("spiaggiaSave.sav");
-            ObjectInputStream load = new ObjectInputStream(loadFile);
-            spiaggia = (ArrayList) load.readObject(); load.close();
-        } catch(Exception exc){ exc.printStackTrace(); }
-    }
-*/
+    public void remover(String c) { spiaggia.remove(c); } //Cancella una spazio dalla spiaggia
+
+    public Map<String, Element> getSpiaggia() { return spiaggia; }
+
 }
